@@ -1,0 +1,53 @@
+{% extends 'theme.html' %}
+
+{% block css %}
+
+  <style>
+    body{
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color:mediumspringgreen;
+      }
+  </style>
+
+{% endblock %}
+
+{% block username %}
+
+{{user.username}}
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="container-fluid mt-5">
+    <p class="display-4 text-center mt-5">Extracted data</p>
+    <div class="row">
+
+        
+        <div class="col-md">
+            <div class="row mt-5">
+                <div class="col-md-4"><p class="h4">Extracted Data</p></div>
+                <div class="col-md-4"><p class="h4">Date Created</p></div>
+                <div class="col-md-3"></div>
+            </div>
+            {%  for record in data %}
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">{{record.data[:30]}}</div>
+                            <div class="col-md-4">{{record.created.date()}}</div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2"><a href="/details?id={{record.id}}" class="btn btn-outline-success">Details</a></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'theme.html' %}
+
+{% block css %}
+
+  <style>
+    body{
+        background-color:mediumspringgreen;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+  </style>
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div>
+        <p class="h4 text-center">Plagiarism Check Report</p>
+
+        <div class="card">
+            <div class="card-body">
+                <p class="h5">Date : </p>
+                <hr>
+                <p class="h3">Unique Content</p><p>{{30}} %</p>
+                <p class="h3">Plagiarised Content</p><p>{{10)}} %</p>
+                <p class="h3">Paraphrased Plagiarism</p><p>{{50)}} %</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
